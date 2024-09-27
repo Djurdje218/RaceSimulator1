@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RaceSimulator.Entities.Common
 {
-    internal class GroundV : Vehicle
+    internal class GroundV(string name) : Vehicle(name)
     {
         protected int MaxRaceTime { get; set; }
         protected int RestPeriod { get; set; }
 
-        public GroundV() { }
+        // public GroundV() { }
 
         public override double RaceTime(double distance)
         {

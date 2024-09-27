@@ -10,17 +10,15 @@ namespace RaceSimulator.Entities
 {
     internal class Broom : AirV
     {
-        public Broom()
+        public Broom() : base("Метла")
         {
-            Name = "Метла";
             Speed = 110;
             Acceleration = 600;
 
         }
 
-        public Broom(string name, double speed)
+        public Broom(string Name, double speed) : base(Name)
         {
-            this.Name = name;
             this.Speed = speed;
             Acceleration = 600;
         }

@@ -10,16 +10,14 @@ namespace RaceSimulator.Entities
 {
     internal class Centaur : GroundV
     {
-        public Centaur()
+        public Centaur() :base("Кентавр")
         {
-            Name = "Кентавр";
             Speed = 85;
             MaxRaceTime = 6;
             RestPeriod = 8;
         }
-        public Centaur(string name, double speed)
+        public Centaur(string name, double speed) : base(name)
         {
-            this.Name = name;
             this.Speed = speed;
             MaxRaceTime = 6;
             RestPeriod = 8;

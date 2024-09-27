@@ -10,17 +10,15 @@ namespace RaceSimulator.Entities
 {
     internal class ChickenHouse : GroundV
     {
-        public ChickenHouse()
+        public ChickenHouse() : base("Избушка на курьих ножках")
         {
-            Name = "Избушка на курьих ножках";
             Speed = 60;
             MaxRaceTime = 4;
             RestPeriod = 10;
         }
 
-        public ChickenHouse(string Name, double Speed)
+        public ChickenHouse(string Name, double Speed) : base(Name) 
         {
-            this.Name = Name;
             this.Speed = Speed;
             MaxRaceTime = 4;
             RestPeriod = 10;

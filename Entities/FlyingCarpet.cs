@@ -10,17 +10,14 @@ namespace RaceSimulator.Entities
 {
     internal class FlyingCarpet : AirV
     {
-        public FlyingCarpet()
+        public FlyingCarpet() : base("Ковер-самолет")
         {
-            Name = "Ковер-самолет";
             Speed = 100;
             Acceleration = 500;
-
         }
 
-        public FlyingCarpet(string name, double speed)
+        public FlyingCarpet(string Name, double speed) : base(Name)
         {
-            this.Name = name;
             this.Speed = speed;
             Acceleration = 500;
         }

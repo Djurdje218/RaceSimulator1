@@ -15,7 +15,7 @@ namespace RaceSimulator
             bool Choice;
             int ChoiceInput;
             double distance;
-            string CustomName = null;
+            string? CustomName = null;
             double CustomSpeed = 0;
             Race race;
 
@@ -25,14 +25,20 @@ namespace RaceSimulator
                 "\n1 -> Наземная + Воздушная гонка" +
                 "\n2 -> Наземная гонка" +
                 "\n3 -> Воздушная гонка\n");
-            RaceType = Convert.ToInt32(Console.ReadLine());
+
+            while (!int.TryParse(Console.ReadLine(), out RaceType) || RaceType < 1 || RaceType > 3 )
+            {
+                Console.WriteLine("Ошибка! Пожалуйста, введите правильный номер гонки. (1, 2 или 3):");
+                
+            }
+
 
             Console.Write("Напишите дистанцу гонки: ");
-            distance = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Сколько траснспортных средства хотите выбрать? ");
-            MaxVehicles = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n");
+            while (!double.TryParse(Console.ReadLine(), out distance) || distance <= 0)
+            {
+                 Console.WriteLine("Ошибка! Дистанция должна быть положительным числом. Пожалуйста, введите правильный номер:");
+            }
 
             switch (RaceType)
             {
@@ -48,6 +54,17 @@ namespace RaceSimulator
                 default:
                     throw new InvalidOperationException(" Error, invalid RaceType");
             }
+
+            Console.Write("Сколько траснспортных средства хотите выбрать? ");
+
+            while (!int.TryParse(Console.ReadLine(), out MaxVehicles) || MaxVehicles <= 0)
+            {
+                Console.WriteLine("Ошибка! Количество траснпортных средств должно быть положительным числом, пожалуйста, введите правильный номер: ");
+            }
+
+            Console.WriteLine("\n");
+
+            
 
             Console.WriteLine("Список транспортных средств ");
             Console.WriteLine("1 - Ступа Бабы Яги \t\t(Наземные)");
@@ -65,17 +82,30 @@ namespace RaceSimulator
             for (int i = 0; i < MaxVehicles; i++)
             {
                 Console.WriteLine($"Выберите транспортное средство номер {i + 1}");
-                VehicleType = Convert.ToInt32(Console.ReadLine());
+
+                while (!int.TryParse(Console.ReadLine(), out VehicleType) || VehicleType < 1 || VehicleType > 8)
+                {
+                    Console.WriteLine("Ошибка! Список транспортных средств начинается с 1 до 8, пожалуйста введите правильный номер: ");
+                }
+
                 Console.WriteLine("Хотите изменить имя и определить скорость? (1 -> Да, 0 -> Нет) ");
 
-                ChoiceInput = Convert.ToInt32(Console.ReadLine());
+                while (!int.TryParse(Console.ReadLine(), out ChoiceInput) || ChoiceInput < 0 || ChoiceInput > 1)
+                {
+                    Console.WriteLine("Ошибка! Пожалуйста введите правильный номер. (1 -> Да, 0 -> Нет)  ");
+                }
+
                 if (ChoiceInput == 1)
                 {
                     Choice = true;
                     Console.WriteLine(" Напишите имя");
                     CustomName = Console.ReadLine();
                     Console.WriteLine("Напишите скорость");
-                    CustomSpeed = Convert.ToDouble(Console.ReadLine());
+
+                    while (!double.TryParse(Console.ReadLine(), out CustomSpeed) || CustomSpeed < 0)
+                    {
+                        Console.WriteLine("Ошибка! Пожалуйста введите правильный номер для скорости вашего транспортного средств: ");
+                    }
                 }
                 else Choice = false;
 

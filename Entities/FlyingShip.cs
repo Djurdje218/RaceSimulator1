@@ -11,16 +11,14 @@ namespace RaceSimulator.Entities
     internal class FlyingShip : AirV
     {
 
-        public FlyingShip()
+        public FlyingShip() : base("Летучий корабль")
         {
-            Name = "Летучий корабль";
             Speed = 120;
             Acceleration = 700;
         }
 
-        public FlyingShip(string name, double speed)
+        public FlyingShip(string name, double speed) : base(name)
         {
-            this.Name = name;
             this.Speed = speed;
             Acceleration = 700;
         }

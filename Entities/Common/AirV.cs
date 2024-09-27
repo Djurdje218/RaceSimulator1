@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RaceSimulator.Entities.Common
 {
-    internal class AirV : Vehicle
+    internal class AirV(string name) : Vehicle(name)
     {
         protected virtual double Acceleration { get; set; }
         public override double RaceTime(double distance)

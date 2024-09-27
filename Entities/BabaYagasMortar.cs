@@ -10,18 +10,14 @@ namespace RaceSimulator.Entities
 {
     internal class BabaYagasMortar : GroundV
     {
-        public BabaYagasMortar()
+        public BabaYagasMortar() : base("Ступа Бабы Яги")
         {
-            Name = "Ступа Бабы Яги";
             Speed = 80;
             MaxRaceTime = 3;
             RestPeriod = 8;
-
-
         }
-        public BabaYagasMortar(string name, double speed)
+        public BabaYagasMortar(string name, double speed) : base(name)
         {
-            this.Name = name;
             this.Speed = speed;
             MaxRaceTime = 3;
             RestPeriod = 8;

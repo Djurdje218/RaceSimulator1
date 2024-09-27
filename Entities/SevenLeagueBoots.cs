@@ -10,17 +10,15 @@ namespace RaceSimulator.Entities
 {
     internal class SevenLeageBoots : GroundV
     {
-        public SevenLeageBoots()
+        public SevenLeageBoots() : base("Сапоги-скороходы")
         {
-            Name = "Сапоги-скороходы";
             Speed = 90;
             MaxRaceTime = 4;
             RestPeriod = 5;
         }
 
-        public SevenLeageBoots(string Name, double Speed)
+        public SevenLeageBoots(string Name, double Speed) : base(Name)
         {
-            this.Name = Name;
             this.Speed = Speed;
             MaxRaceTime = 4;
             RestPeriod = 5;

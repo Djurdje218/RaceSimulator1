@@ -10,17 +10,15 @@ namespace RaceSimulator.Entities
 {
     internal class PumpkinCar : GroundV
     {
-        public PumpkinCar()
+        public PumpkinCar() : base("Карета-тыква")
         {
-            Name = "Карета-тыква";
             Speed = 70;
             MaxRaceTime = 5;
             RestPeriod = 7;
         }
 
-        public PumpkinCar(string Name, double Speed)
-        {
-            this.Name = Name;
+        public PumpkinCar(string Name, double Speed) : base(Name)
+        { 
             this.Speed = Speed;
             MaxRaceTime = 5;
             RestPeriod = 7;

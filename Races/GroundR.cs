@@ -20,7 +20,12 @@ namespace RaceSimulator.Races
             {
                 vehicles.Add(groundV);
             }
-            else throw new InvalidOperationException("Эта гонка только для наземных средств");
+            else
+            {
+                Console.WriteLine("Ошибка! Нельзя добавить воздушное транспортное средство в гонку для наземных транспортных средств.");
+                throw new InvalidOperationException("Эта гонка только для наземных средств"); // можно убрать, если не хотим останавливать программу.
+
+            }
 
         }
     }
