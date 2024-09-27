@@ -28,7 +28,7 @@ namespace RaceSimulator
 
             while (!int.TryParse(Console.ReadLine(), out RaceType) || RaceType < 1 || RaceType > 3 )
             {
-                Console.WriteLine("Ошибка! Пожалуйста, введите правильный номер гонки. (1, 2 или 3):");
+                Console.WriteLine("\nОшибка! Пожалуйста, введите правильный номер гонки. (1, 2 или 3):");
                 
             }
 
@@ -37,7 +37,7 @@ namespace RaceSimulator
 
             while (!double.TryParse(Console.ReadLine(), out distance) || distance <= 0)
             {
-                 Console.WriteLine("Ошибка! Дистанция должна быть положительным числом. Пожалуйста, введите правильный номер:");
+                 Console.WriteLine("\nОшибка! Дистанция должна быть положительным числом. Пожалуйста, введите правильный номер:");
             }
 
             switch (RaceType)
@@ -52,14 +52,14 @@ namespace RaceSimulator
                     race = new AirR(distance);
                     break;
                 default:
-                    throw new InvalidOperationException(" Error, invalid RaceType");
+                    throw new InvalidOperationException(" \nError, invalid RaceType");
             }
 
             Console.Write("Сколько траснспортных средства хотите выбрать? ");
 
             while (!int.TryParse(Console.ReadLine(), out MaxVehicles) || MaxVehicles <= 0)
             {
-                Console.WriteLine("Ошибка! Количество траснпортных средств должно быть положительным числом, пожалуйста, введите правильный номер: ");
+                Console.WriteLine("\nОшибка! Количество траснпортных средств должно быть положительным числом, пожалуйста, введите правильный номер: ");
             }
 
             Console.WriteLine("\n");
@@ -85,14 +85,14 @@ namespace RaceSimulator
 
                 while (!int.TryParse(Console.ReadLine(), out VehicleType) || VehicleType < 1 || VehicleType > 8)
                 {
-                    Console.WriteLine("Ошибка! Список транспортных средств начинается с 1 до 8, пожалуйста введите правильный номер: ");
+                    Console.WriteLine("\nОшибка! Список транспортных средств начинается с 1 до 8, пожалуйста введите правильный номер: ");
                 }
 
                 Console.WriteLine("Хотите изменить имя и определить скорость? (1 -> Да, 0 -> Нет) ");
 
                 while (!int.TryParse(Console.ReadLine(), out ChoiceInput) || ChoiceInput < 0 || ChoiceInput > 1)
                 {
-                    Console.WriteLine("Ошибка! Пожалуйста введите правильный номер. (1 -> Да, 0 -> Нет)  ");
+                    Console.WriteLine("\nОшибка! Пожалуйста введите правильный номер. (1 -> Да, 0 -> Нет)  ");
                 }
 
                 if (ChoiceInput == 1)
@@ -104,7 +104,7 @@ namespace RaceSimulator
 
                     while (!double.TryParse(Console.ReadLine(), out CustomSpeed) || CustomSpeed < 0)
                     {
-                        Console.WriteLine("Ошибка! Пожалуйста введите правильный номер для скорости вашего транспортного средств: ");
+                        Console.WriteLine("\nОшибка! Пожалуйста введите правильный номер для скорости вашего транспортного средств: ");
                     }
                 }
                 else Choice = false;

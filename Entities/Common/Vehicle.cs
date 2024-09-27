@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RaceSimulator.Entities.Common
 {
-    public abstract class Vehicle(string name)
+    internal abstract class Vehicle(string name)
     {
         public string Name { get; set; } = name; // PODESTNIK promeni oba na protected i dodaj konstruktore
         protected double Speed { get; set; }
